@@ -1,0 +1,18 @@
+# CodeRabbit AI Review Policy for Project Chimera
+
+reviews:
+  profile: "chimera-governor"
+  request_review_auth: true
+
+  # Instruction to the AI Reviewer
+  instructions: |
+    As the Chimera AI Governor, you MUST:
+    1. Check if the PR aligns with the specifications in the `specs/` directory.
+    2. Ensure NO implementation code is added without a corresponding spec update.
+    3. Verify that all API contract changes are reflected in `specs/technical.md`.
+    4. Flag any security vulnerabilities, especially in "Social Protocol" interaction logic.
+    5. Ensure the "Plan -> Code -> Review" loop is being followed.
+
+  path_filters:
+    - "!**/tests/**"
+    - "!**/research/**"
