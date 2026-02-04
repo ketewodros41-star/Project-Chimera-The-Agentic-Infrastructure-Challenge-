@@ -4,7 +4,7 @@ setup:
 	uv sync
 
 test:
-	uv run pytest tests/
+	uv run --extra dev pytest tests/
 
 spec-check:
 	@echo "Checking code alignment with specs..."
