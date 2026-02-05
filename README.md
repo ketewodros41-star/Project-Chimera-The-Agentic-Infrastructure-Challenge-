@@ -257,6 +257,7 @@ make docker-build
 
 - **[ARCHITECTURAL_APPROACH.md](ARCHITECTURAL_APPROACH.md)** - Complete technical specification
 - **[research/day1_report.md](research/day1_report.md)** - Executive summary and strategy
+- **[research/day2_report.md](research/day2_report.md)** - Progress and infrastructure audit
 - **[specs/](specs/)** - Functional and technical specifications
 - **[implementation_plan.md](implementation_plan.md)** - Detailed development roadmap
 
