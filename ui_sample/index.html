@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chimera Command Center | End-to-End Governance</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PROJECT CHIMERA // COMMAND</div>
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                SWARM ACTIVE
+            </div>
+        </header>
+
+        <main class="grid">
+            <!-- Left Column: Swarm Stats & Trends -->
+            <div class="span-4 flex-col">
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h2>Swarm Health</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Compute Load</span>
+                                <span>42%</span>
+                            </div>
+                            <div class="velocity-bar" style="width: 100%;">
+                                <div class="velocity-fill" style="width: 42%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Memory (Weaviate)</span>
+                                <span>1.2GB</span>
+                            </div>
+                            <div class="velocity-bar" style="width: 100%;">
+                                <div class="velocity-fill" style="width: 65%; background: var(--accent-purple);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Live Trend Feed</h2>
+                    <div id="trend-list">
+                        <!-- Trends will be injected here -->
+                        <div class="trend-item">
+                            <div>
+                                <div style="font-weight: 600;">#AutonomousAgents</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Source: OpenClaw</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="color: var(--accent-blue); font-weight: 600;">88%</div>
+                                <div class="velocity-bar">
+                                    <div class="velocity-fill" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-item">
+                            <div>
+                                <div style="font-weight: 600;">#AI-Influencer-Factory</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Source: Moltbook</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="color: var(--accent-blue); font-weight: 600;">72%</div>
+                                <div class="velocity-bar">
+                                    <div class="velocity-fill" style="width: 72%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: HITL Approval Queue -->
+            <div class="span-8">
+                <div class="card" style="height: 100%;">
+                    <h2>HITL Approval Queue [Dimension 5]</h2>
+                    <div id="approval-queue">
+                        <div class="approval-item">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div>
+                                    <span
+                                        style="font-size: 0.7rem; color: var(--accent-purple); font-weight: 800; text-transform: uppercase;">Task
+                                        ID: tsk-8821</span>
+                                    <div style="font-weight: 600; margin-top: 0.2rem;">Generated Caption for
+                                        #AutonomousAgents</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Confidence</div>
+                                    <div style="color: var(--success); font-weight: 600;">0.82</div>
+                                </div>
+                            </div>
+                            <div
+                                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; font-style: italic; color: var(--text-secondary);">
+                                "The future is agentic. Project Chimera is proving that we can build factories for
+                                digital existence. 🦾🚀"
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-approve" onclick="handleAction('tsk-8821', 'approve')">Approve
+                                    Post</button>
+                                <button class="btn-reject" onclick="handleAction('tsk-8821', 'reject')">Reject &
+                                    Refine</button>
+                            </div>
+                        </div>
+
+                        <div id="no-tasks"
+                            style="display: none; text-align: center; padding: 3rem; color: var(--text-secondary);">
+                            No pending tasks. Swarm is autonomous.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div>&copy; 2026 PROJECT CHIMERA FACTORY // KETEWODROS41-STAR</div>
+            <div id="prime-directive">PRIME DIRECTIVE: NEVER generate code without checking specs/ first.</div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
