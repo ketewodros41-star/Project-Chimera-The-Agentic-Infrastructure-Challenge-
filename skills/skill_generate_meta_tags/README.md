@@ -27,3 +27,8 @@ Uses LLM-based analysis to generate SEO and discovery tags for the OpenClaw netw
 - `LLM_HALLUCINATION`: Generated tags are irrelevant to context.
 - `CONTEXT_OVERFLOW`: Input description is too long for model window.
 - `PROVIDER_ERROR`: LLM API (e.g., OpenAI) is unreachable.
+
+## Non-goals
+- Natural language generation (SEO tag generation only).
+- Sentiment analysis beyond categorization.
+- Real-time indexing (tag generation only).

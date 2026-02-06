@@ -29,3 +29,8 @@ Fetches raw media from external social protocols and repositories.
 - `PROVIDER_UNAVAILABLE`: The target social platform is down.
 - `INSUFFICIENT_STORAGE`: Local disk space is exhausted.
 - `AUTH_FAILED`: Invalid credentials for protected content.
+
+## Non-goals
+- Browser automation (stateless HTTP fetch only).
+- Dynamic decryption of encrypted media.
+- Large-scale data transformation (stateless download only).

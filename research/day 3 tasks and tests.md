@@ -15,14 +15,11 @@
     - [x] Create `skills/skill_generate_meta_tags/README.md`
     - [x] Create `skills/skill_publish_to_moltbook/README.md`
 
-## Task 3: The Governor (Infrastructure & Governance)
-- [x] Restore TDD "Empty Slot" (Failing Tests)
-    - [x] Clear stubs in `chimera/fetcher.py`
-    - [x] Clear stubs in `chimera/skills.py`
-- [x] Task 3.2: Containerization & Automation
-- [x] Task 3.3: CI/CD & AI Governance
+- [x] Final Compliance Cleanup
+    - [x] Add "Non-goals" to all 3 skill READMEs
+    - [x] Refactor tests to be "Boundary Only" (no direct imports)
 
 ## Final Verification
-- [x] Run `make test` and confirm failure
-- [x] Verify directory structure
-- [x] Final Status Report
+- [x] Run `make test` and confirm FAILURE (Missing Implementation)
+- [x] Final Audit (Pass Version)
+- [x] Notify User (Day 3 Complete)
