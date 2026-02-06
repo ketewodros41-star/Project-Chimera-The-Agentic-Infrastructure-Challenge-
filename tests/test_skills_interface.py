@@ -1,24 +1,44 @@
 import pytest
 import importlib
 
-def test_skill_download_interface_compliance():
+def test_skill_download_youtube_interface():
     """
-    Validates that the Download Skill interface exists.
-    Asserts against parameter contracts in skills/README.md. [TR-T2]
-    Must FAIL with NotImplementedError on Day 3.
+    Validates skill_download_youtube interface.
+    Must FAIL with NotImplementedError.
     """
-    # Boundary Discovery
     try:
         module = importlib.import_module("chimera.skills")
-        skill_download_content = getattr(module, "skill_download_content")
+        func = getattr(module, "skill_download_youtube")
     except (ImportError, AttributeError):
-        pytest.fail("Download Skill interface NOT found at chimera.skills")
+        pytest.fail("Skill interface NOT found")
+    
+    # Assert parameter contract
+    func(url="https://youtube.com/test")
 
-    # Skill input parameter contracts validation (intent)
-    # Input: {"url": "string", "provider": "string"}
+def test_skill_transcribe_audio_interface():
+    """
+    Validates skill_transcribe_audio interface.
+    Must FAIL with NotImplementedError.
+    """
+    try:
+        module = importlib.import_module("chimera.skills")
+        func = getattr(module, "skill_transcribe_audio")
+    except (ImportError, AttributeError):
+        pytest.fail("Skill interface NOT found")
     
-    # Output type assertions (intent)
-    # Expected: dict containing {"local_path": str, "bytes": int}
+    # Assert parameter contract
+    func(audio_path="/tmp/test.mp3")
+
+def test_skill_generate_caption_interface():
+    """
+    Validates skill_generate_caption interface.
+    Must FAIL with NotImplementedError.
+    """
+    try:
+        module = importlib.import_module("chimera.skills")
+        func = getattr(module, "skill_generate_caption")
+    except (ImportError, AttributeError):
+        pytest.fail("Skill interface NOT found")
     
-    # TDD: Must FAIL until implemented (Empty Slot)
-    skill_download_content(url="https://youtube.com/test", provider="youtube")
+    # Assert parameter contract
+    func(trend_data={"topic": "AI"})

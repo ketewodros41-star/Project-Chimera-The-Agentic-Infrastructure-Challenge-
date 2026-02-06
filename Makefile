@@ -1,9 +1,15 @@
-.PHONY: setup test spec-check clean docker-build docker-test
+.PHONY: setup test local-test spec-check clean docker-build
 
 setup:
 	uv sync
 
+# Rubric Requirement: make test runs INSIDE docker
 test:
+	docker build -t chimera-factory .
+	docker run --rm chimera-factory make local-test
+
+# Internal command used by Dockerfile/CI
+local-test:
 	@echo "DEBUG: Running tests with dev dependencies"
 	uv run --extra dev pytest tests/
 
@@ -13,9 +19,6 @@ spec-check:
 
 docker-build:
 	docker build -t chimera-factory .
-
-docker-test:
-	docker run --rm chimera-factory make test
 
 clean:
 	rm -rf .venv/
