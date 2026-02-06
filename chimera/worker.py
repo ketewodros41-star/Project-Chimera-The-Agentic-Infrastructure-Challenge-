@@ -16,7 +16,7 @@ class WorkerService(SwarmNode):
                 task.status = TaskStatus.IN_PROGRESS
                 
                 # Mock execution
-                time.sleep(2)  # Simulate work
+                time.sleep(1)
                 
                 output = f"Result of {task.task_type} for {task.context}"
                 result = Result(
@@ -24,7 +24,9 @@ class WorkerService(SwarmNode):
                     worker_id=self.node_id,
                     output=output,
                     confidence_score=0.95,
-                    reasoning_trace=f"Executed {task.task_type} logic successfully."
+                    reasoning_trace=f"Executed {task.task_type} logic successfully.",
+                    # Dimension 2: Returning the state_version for OCC check
+                    state_version=getattr(task, 'state_version', '1970-01-01T00:00:00Z')
                 )
                 
                 print(f"Worker {self.node_id} pushing result for task: {task.task_id}")

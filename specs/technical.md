@@ -20,13 +20,15 @@
 - **Input:** `{"url": "string"}`
 - **Output:** `{"file_path": "string", "duration": "int"}`
 
-### Universal Task Contract
+### Universal Task Contract (`AgentTask`)
+Matches SRS §6.2 Schema 1.
 ```json
 {
   "task_id": "uuid",
   "skill": "string",
   "parameters": "json",
-  "priority": "int",
+  "priority": "int (1-10)",
+  "state_version": "iso8601",
   "deadline": "timestamp"
 }
 ```
@@ -38,13 +40,48 @@
   "status": "success | failure",
   "payload": "json",
   "error": "string | null",
-  "confidence": "float"
+  "confidence": "float (0.0-1.0)",
+  "state_version": "iso8601"
 }
 ```
 
-## Database Schema (ERD)
+### MCP Tool Definition
+Matches SRS §6.2 Schema 2.
+```json
+{
+  "name": "string",
+  "description": "string",
+  "input_schema": "json_schema",
+  "output_schema": "json_schema"
+}
+```
 
-### Video Metadata Table
+## Governance Logic
+
+### Optimistic Concurrency Control (OCC)
+The Judge Agent MUST verify that the `state_version` in the Result matches the `state_version` in the Current Global State. If the state has drifted (Result.state_version < Current.state_version), the commit must be REJECTED.
+
+## Database Schema (ERD) [FR-6.0]
+
+```mermaid
+erDiagram
+    TREND ||--o{ VIDEO : generates
+    VIDEO {
+        uuid id PK
+        string title
+        uuid trend_ref FK
+        string storage_url
+        jsonb ai_analysis
+        timestamp created_at
+    }
+    TREND {
+        uuid trend_id PK
+        string source
+        float velocity
+    }
+```
+
+### Video Metadata Table [FR-6.1]
 - `id`: UUID (Primary Key)
 - `title`: String
 - `trend_ref`: UUID (Foreign Key)

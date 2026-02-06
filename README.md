@@ -213,9 +213,9 @@ make docker-build
 ```
 
 ### Development Workflow
-1. **Spec Creation**: Define requirements in `specs/` directory
-2. **Implementation**: Code generation based on ratified specs
-3. **Validation**: Automated testing against spec contracts
+1. **Spec Creation**: Define requirements in `specs/` using the GitHub Spec Kit framework.
+2. **Implementation**: Code generation based on ratified, unambiguous specs.
+3. **Validation**: Automated testing against spec contracts to ensure Zero-Drift.
 4. **Deployment**: Container-based deployment with spec validation
 
 ## 🛠️ Technology Stack

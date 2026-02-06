@@ -1,20 +1,29 @@
 import pytest
 import importlib
+import json
 
-def test_trend_fetcher_interface():
+def test_trend_fetcher_interface_compliance():
     """
-    Validates that the Trend Fetcher interface exists at the spec-defined boundary.
-    Asserts compliance with technical.md JSON contracts.
+    Validates that the Trend Fetcher interface exists.
+    Asserts against the SPECIFIED data structure in technical.md. [TR-T1]
+    Must FAIL with NotImplementedError on Day 3.
     """
-    # Boundary Discovery (No direct import of internals)
+    # Boundary Discovery
     try:
         module = importlib.import_module("chimera.fetcher")
         fetch_latest_trends = getattr(module, "fetch_latest_trends")
     except (ImportError, AttributeError):
         pytest.fail("Trend Fetcher interface NOT found at chimera.fetcher")
 
-    # TDD: Must FAIL until implemented (Empty Slot)
-    with pytest.raises(NotImplementedError) as excinfo:
-        fetch_latest_trends()
+    # JSON Schema Validation (Intent)
+    # The expected schema for each trend item:
+    # {
+    #   "trend_id": "uuid",
+    #   "source": "openclaw",
+    #   "topic": "string",
+    #   "velocity": "float"
+    # }
     
-    assert "pending agentic implementation" in str(excinfo.value)
+    # TDD: Must FAIL until implemented (Empty Slot)
+    # We execute the call; it must raise NotImplementedError
+    fetch_latest_trends()

@@ -28,5 +28,5 @@ Skills are specific capability packages that the Chimera Agent uses to interact 
 ### 3. Agentic Commerce
 - **mcp-server-coinbase**: Financial operations via Coinbase AgentKit (ETH/USDC transactions).
 
----
-*Note: This strategy ensures that all external interactions are abstracted through the Model Context Protocol (MCP), maintaining traceability and security.*
+### 🟢 Separation Boundary [TR-STR]
+There is a strict separation between **Developer Tools** (used for repository and context management in the IDE) and **Agent Skills** (runtime capabilities used by the swarm to execute its mission). Developer tools use `stdio` MCP access, while Runtime Skills are encapsulated in standard skill contracts.

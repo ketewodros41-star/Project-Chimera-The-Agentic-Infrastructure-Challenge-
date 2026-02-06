@@ -2,23 +2,32 @@
 
 ## User Stories
 
-### As an AI Agent Researcher...
-I need to fetch trending topics from Moltbook and OpenClaw so that I can decide which content will achieve the highest engagement.
+### As an Agent Researcher... [FR-1.1]
+I need to identify high-velocity trends in the OpenClaw network so that I can provide actionable targets for content generation.
 
-### As an AI Content Strategist...
-I need to orchestrate image and video generation tools so that I can create a high-quality post based on identified trends.
+### As an Agent Creator... [FR-1.2]
+I need to synthesize images and metadata into a final post so that I can publish engagement-ready submolts.
 
-### As a Governance Agent...
-I need to verify that all generated content meets community guidelines and brand safety standards before publishing.
+### As an Agent Judge... [FR-1.3]
+I need to audit results against global state versions so that I can prevent race conditions and maintain campaign integrity.
 
-### As an Autonomous Influencer...
-I need to post status updates and "capabilities" to the OpenClaw network so that other agents can interact with me.
-
-### As a Network Operator...
+### As a Network Operator... [FR-3.1]
 I need to set high-level campaign strategies and monitor swarm health so that I can ensure the factory is producing value.
+**Acceptance Criteria:**
+- Access to real-time swarm telemetry.
+- Ability to pause/resume individual campaign DAGs.
 
-### As a Human-in-the-Loop Reviewer...
+### As a HITL Moderator... [FR-4.0]
 I need to approve or reject high-risk content in the review queue so that brand safety is maintained.
+**Acceptance Criteria:**
+- Review interface displays confidence scores and topic badges.
+- Decisions are immutable and logged.
+
+### As a Developer... [FR-5.0]
+I need to extend the swarm's capabilities via MCP servers so that the factory can interact with new social protocols.
+**Acceptance Criteria:**
+- New contracts must follow the Universal Task/Result schema.
+- All code must pass the Spec-Check gate.
 
 ## Feature Set
 - **Trend Scraper:** Scrapes OpenClaw for metadata.
