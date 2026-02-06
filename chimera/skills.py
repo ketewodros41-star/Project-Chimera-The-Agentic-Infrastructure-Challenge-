@@ -1,20 +1,20 @@
-def skill_trend_analyzer(source: str, timeframe: str) -> dict:
+def skill_download_youtube(url: str) -> dict:
     """
-    Identifies viral topics across OpenClaw and Moltbook.
+    Downloads raw video/audio content from YouTube.
     To be implemented by AI Agents.
     """
     raise NotImplementedError("Skill logic is pending agentic implementation.")
 
-def skill_content_generator(prompt: str, modality: str) -> dict:
+def skill_transcribe_audio(audio_path: str) -> dict:
     """
-    Automates media asset creation.
+    Converts audio content to text transcriptions.
     To be implemented by AI Agents.
     """
     raise NotImplementedError("Skill logic is pending agentic implementation.")
 
-def skill_engagement_optimizer(platform: str, metrics: dict) -> dict:
+def skill_generate_caption(trend_data: dict) -> dict:
     """
-    Schedules posts for maximum impact.
+    Generates engaging captions based on trend data.
     To be implemented by AI Agents.
     """
     raise NotImplementedError("Skill logic is pending agentic implementation.")

@@ -32,8 +32,7 @@ ENV/
 # IDEs
 .idea/
 .vscode/
-.cursor/
-!.cursor/rules
+
 
 # Environment Variables
 .env

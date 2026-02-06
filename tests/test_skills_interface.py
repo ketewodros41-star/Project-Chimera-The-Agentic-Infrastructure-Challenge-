@@ -1,44 +1,44 @@
 import pytest
 import importlib
 
-def test_skill_trend_analyzer_interface():
+def test_skill_download_youtube_interface():
     """
-    Validates skill_trend_analyzer interface.
+    Validates skill_download_youtube interface.
     Must FAIL with NotImplementedError.
     """
     try:
         module = importlib.import_module("chimera.skills")
-        func = getattr(module, "skill_trend_analyzer")
+        func = getattr(module, "skill_download_youtube")
     except (ImportError, AttributeError):
         pytest.fail("Skill interface NOT found")
     
     # Assert parameter contract
-    func(source="openclaw", timeframe="24h")
+    func(url="https://youtube.com/test")
 
-def test_skill_content_generator_interface():
+def test_skill_transcribe_audio_interface():
     """
-    Validates skill_content_generator interface.
+    Validates skill_transcribe_audio interface.
     Must FAIL with NotImplementedError.
     """
     try:
         module = importlib.import_module("chimera.skills")
-        func = getattr(module, "skill_content_generator")
+        func = getattr(module, "skill_transcribe_audio")
     except (ImportError, AttributeError):
         pytest.fail("Skill interface NOT found")
     
     # Assert parameter contract
-    func(prompt="Create viral AI meme", modality="image")
+    func(audio_path="/tmp/test.mp3")
 
-def test_skill_engagement_optimizer_interface():
+def test_skill_generate_caption_interface():
     """
-    Validates skill_engagement_optimizer interface.
+    Validates skill_generate_caption interface.
     Must FAIL with NotImplementedError.
     """
     try:
         module = importlib.import_module("chimera.skills")
-        func = getattr(module, "skill_engagement_optimizer")
+        func = getattr(module, "skill_generate_caption")
     except (ImportError, AttributeError):
         pytest.fail("Skill interface NOT found")
     
     # Assert parameter contract
-    func(platform="twitter", metrics={"reach": 1000})
+    func(trend_data={"topic": "AI"})

@@ -1,0 +1,26 @@
+---
+description: Project Chimera Context & Rules
+globs: ["**/*.py", "**/*.md"]
+---
+
+# Project Chimera: The Autonomous Influencer Factory
+
+## 1. Prime Directive
+**PRIME DIRECTIVE: NEVER generate code without checking `specs/` first.**
+Ambiguity is the enemy of AI. If a requirement is unclear or vague, the Agent will hallucinate. Ask for clarification or check the SRS.
+
+## 2. Project Context
+We are building a robust, distributed agent swarm.
+- **Pattern**: FastRender Swarm (Planner -> Worker -> Judge).
+- **Integration**: Model Context Protocol (MCP) strictly. No direct API calls in agent logic.
+- **Data**: Weaviate (Semantic), Postgres (Transactional).
+
+## 3. Coding Standards
+- **Spec-Driven**: All code must trace back to a requirement in `specs/`.
+- **Traceability**: Explain your plan before writing code.
+- **Type Safety**: Use `pydantic` for all data models.
+- **Testing**: TDD is required. Write failing tests first.
+
+## 4. MCP Usage
+- Distinguish between **Skills** (internal logic) and **MCP Servers** (external bridges).
+- Ensure **Tenx MCP Sense** is considered "Connected" (conceptually) for traceability.

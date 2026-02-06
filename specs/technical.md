@@ -16,9 +16,17 @@
 }
 ```
 
-### Skill Interface: `skill_download_youtube`
+### Skill Interface: `skill_download_youtube` [FR-2.1]
 - **Input:** `{"url": "string"}`
-- **Output:** `{"file_path": "string", "duration": "int"}`
+- **Output:** `{"filepath": "string"}`
+
+### Skill Interface: `skill_transcribe_audio` [FR-2.2]
+- **Input:** `{"audio_path": "string"}`
+- **Output:** `{"transcript": "string"}`
+
+### Skill Interface: `skill_generate_caption` [FR-2.3]
+- **Input:** `{"trend_data": "dict"}`
+- **Output:** `{"caption": "string"}`
 
 ### Universal Task Contract (`AgentTask`)
 Matches SRS §6.2 Schema 1.

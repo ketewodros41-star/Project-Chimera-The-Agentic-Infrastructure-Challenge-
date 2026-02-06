@@ -7,20 +7,20 @@ Each skill must follow the structured contract definition below.
 
 ## Critical Skill Contracts
 
-### 1. `skill_trend_analyzer`
-- **Purpose:** Identifies viral topics across OpenClaw and Moltbook.
-- **Input:** `{"source": "string", "timeframe": "string"}`
-- **Output:** `{"trends": "list"}`
+### 1. `skill_download_youtube`
+- **Purpose:** Downloads raw video/audio content from YouTube.
+- **Input:** `{"url": "string"}`
+- **Output:** `{"filepath": "string"}`
 
-### 2. `skill_content_generator`
-- **Purpose:** Automates media asset creation.
-- **Input:** `{"prompt": "string", "modality": "string"}`
-- **Output:** `{"asset_url": "string"}`
+### 2. `skill_transcribe_audio`
+- **Purpose:** Converts audio content to text transcriptions.
+- **Input:** `{"audio_path": "string"}`
+- **Output:** `{"transcript": "string"}`
 
-### 3. `skill_engagement_optimizer`
-- **Purpose:** Schedules posts for maximum impact.
-- **Input:** `{"platform": "string", "metrics": "dict"}`
-- **Output:** `{"schedule": "dict"}`
+### 3. `skill_generate_caption`
+- **Purpose:** Generates engaging captions based on trend data.
+- **Input:** `{"trend_data": "dict"}`
+- **Output:** `{"caption": "string"}`
 
 ## Non-goals
 - Manual post approval (handled by HITL Moderator role).
