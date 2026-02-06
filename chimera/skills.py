@@ -1,8 +1,6 @@
 def skill_download_content(url: str, provider: str) -> dict:
     """
-    Stub implementation of skill_download_content.
+    Downloads content from raw provider URLs.
+    To be implemented by AI Agents.
     """
-    return {
-        "local_path": "/tmp/test_download",
-        "bytes": 1024
-    }
+    raise NotImplementedError("Skill logic is pending agentic implementation.")

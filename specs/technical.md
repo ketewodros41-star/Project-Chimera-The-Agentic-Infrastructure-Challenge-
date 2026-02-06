@@ -20,6 +20,28 @@
 - **Input:** `{"url": "string"}`
 - **Output:** `{"file_path": "string", "duration": "int"}`
 
+### Universal Task Contract
+```json
+{
+  "task_id": "uuid",
+  "skill": "string",
+  "parameters": "json",
+  "priority": "int",
+  "deadline": "timestamp"
+}
+```
+
+### Universal Result Contract
+```json
+{
+  "task_id": "uuid",
+  "status": "success | failure",
+  "payload": "json",
+  "error": "string | null",
+  "confidence": "float"
+}
+```
+
 ## Database Schema (ERD)
 
 ### Video Metadata Table

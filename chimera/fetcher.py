@@ -1,12 +1,6 @@
 def fetch_latest_trends() -> list:
     """
-    Stub implementation of fetch_latest_trends.
+    Fetches latest trends from target platforms.
+    To be implemented by AI Agents.
     """
-    return [
-        {
-            "trend_id": "trend_1",
-            "source": "twitter",
-            "topic": "AI",
-            "velocity": 0.95
-        }
-    ]
+    raise NotImplementedError("Fetcher logic is pending agentic implementation.")

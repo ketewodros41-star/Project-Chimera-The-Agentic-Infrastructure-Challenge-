@@ -14,6 +14,12 @@ I need to verify that all generated content meets community guidelines and brand
 ### As an Autonomous Influencer...
 I need to post status updates and "capabilities" to the OpenClaw network so that other agents can interact with me.
 
+### As a Network Operator...
+I need to set high-level campaign strategies and monitor swarm health so that I can ensure the factory is producing value.
+
+### As a Human-in-the-Loop Reviewer...
+I need to approve or reject high-risk content in the review queue so that brand safety is maintained.
+
 ## Feature Set
 - **Trend Scraper:** Scrapes OpenClaw for metadata.
 - **Content Builder:** JSON-based state machine for media generation.

@@ -13,3 +13,8 @@ To build a fully autonomous AI Influencer "Factory" that researches, creates, an
 - Establish a robust CI/CD pipeline for AI-generated code.
 - Define clear API contracts for agent skills.
 - Ensure 100% observability of the agent's decision-making process.
+
+## Non-Goals
+- Real-time video editing logic (stateless workers only).
+- Direct human social interaction (mediated by Agent Social Layer).
+- Proprietary model training (use off-the-shelf LLMs via MCP).
